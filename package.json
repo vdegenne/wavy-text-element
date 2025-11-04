@@ -1,6 +1,6 @@
 {
 	"name": "wavy-text-element",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A wavy text custom element.",
 	"type": "module",
 	"exports": {
@@ -17,6 +17,9 @@
 		"lit": "^3.3.1",
 		"typescript": "^5.9.3",
 		"wireit": "^0.14.12"
+	},
+	"peerDependencies": {
+		"lit": "^3.0.0"
 	},
 	"wireit": {
 		"build": {

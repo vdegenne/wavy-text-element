@@ -21,8 +21,6 @@ Then in your html, for instance
 <wavy-text label="locked"></wavy-text>
 ```
 
-What to expect:
-
 ---
 
 MIT

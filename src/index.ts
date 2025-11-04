@@ -52,7 +52,7 @@ export class WavyText extends LitElement {
 			this.style.setProperty('--wavy-text-speed', this.speed + 's')
 		}
 		if (changed.has('height')) {
-			this.style.setProperty('--wavy-text-height', this.height + 'px')
+			this.style.setProperty('--wavy-text-height', '-' + this.height + 'px')
 		}
 		super.update(changed)
 	}

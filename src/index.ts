@@ -1,5 +1,5 @@
 import {css, html, LitElement, PropertyValues} from 'lit'
-import {customElement, property, query} from 'lit/decorators.js'
+import {customElement, property} from 'lit/decorators.js'
 
 @customElement('wavy-text')
 export class WavyText extends LitElement {
@@ -12,8 +12,6 @@ export class WavyText extends LitElement {
 	 * Delay between each letter in ms
 	 */
 	@property({type: Number}) delay = 60
-
-	@query('span') spanElement!: HTMLElement
 
 	#letters: string[] = []
 

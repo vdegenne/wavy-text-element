@@ -1,6 +1,6 @@
 {
 	"name": "wavy-text-element",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A wavy text custom element.",
 	"type": "module",
 	"exports": {

@@ -1,5 +1,7 @@
 # wavy-text-element
 
+<img src="https://raw.githubusercontent.com/vdegenne/wavy-text-element/refs/heads/main/demo.gif" />
+
 ## Install
 
 ```bash

@@ -14,7 +14,7 @@ export class WavyText extends LitElement {
 
 	@state() private letters: string[] = []
 
-	#observer = new MutationObserver(() => this.#computerLetters())
+	#observer = new MutationObserver(this.#computerLetters.bind(this))
 
 	connectedCallback(): void {
 		super.connectedCallback()

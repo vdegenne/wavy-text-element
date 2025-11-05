@@ -20,11 +20,17 @@ import 'wavy-text-element'
 Then in your html, for instance
 
 ```html
-<wavy-text label="locked" speed="1.5" height="10" delay="60"></wavy-text>
-```
+<wavy-text>locked</wavy-text>
 
-(speed in s, height in px, delay between each letter in ms)
-All attributes are optional.
+<!-- or -->
+<wavy-text speed="1.5" height="10" delay="60">hello world</wavy-text>
+
+<!--
+	speed in s
+	height in px
+	delay (between each letter) in ms
+-->
+```
 
 ---
 

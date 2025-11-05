@@ -40,7 +40,7 @@ export class WavyText extends LitElement {
 	}
 
 	async #computerLetters() {
-		this.letters = []
+		this.letters = [] // reset to avoid mismatched delays
 		await this.updateComplete
 		this.letters = Array.from(
 			new Intl.Segmenter('us', {

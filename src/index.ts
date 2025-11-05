@@ -14,9 +14,24 @@ export class WavyText extends LitElement {
 
 	@state() private letters: string[] = []
 
+	#observer = new MutationObserver(() => this.#computerLetters())
+
+	connectedCallback(): void {
+		super.connectedCallback()
+		this.#observer.observe(this, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		})
+		this.#computerLetters()
+	}
+	disconnectedCallback(): void {
+		super.disconnectedCallback()
+		this.#observer.disconnect()
+	}
+
 	render() {
-		return html`<slot @slotchange=${this.#handleSlotChange}></slot>
-			${this.letters.map(
+		return html`<slot></slot>${this.letters.map(
 				(l, i) =>
 					html`<span style="animation-delay:${i * this.delay}ms"
 						>${l === ' ' ? html`&nbsp;` : l}</span
@@ -24,7 +39,9 @@ export class WavyText extends LitElement {
 			)}`
 	}
 
-	#handleSlotChange() {
+	async #computerLetters() {
+		this.letters = []
+		await this.updateComplete
 		this.letters = Array.from(
 			new Intl.Segmenter('us', {
 				granularity: 'grapheme',

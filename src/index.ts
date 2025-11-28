@@ -1,5 +1,6 @@
 import {css, html, LitElement, PropertyValues} from 'lit'
 import {customElement, property, state} from 'lit/decorators.js'
+import {styleMap} from 'lit/directives/style-map.js'
 
 @customElement('wavy-text')
 export class WavyText extends LitElement {
@@ -33,7 +34,7 @@ export class WavyText extends LitElement {
 	render() {
 		return html`<slot></slot>${this.letters.map(
 				(l, i) =>
-					html`<span style="animation-delay:${i * this.delay}ms"
+					html`<span style=${styleMap({animationDelay: `${i * this.delay}ms`})}
 						>${l === ' ' ? html`&nbsp;` : l}</span
 					>`,
 			)}`
